@@ -1,5 +1,9 @@
 https://www.youtube.com/watch?v=mU6anWqZJcc&t=5963
-
+aws is hosting it. route 53 to register domain name. cloudfront, a cdn,  to make data transfer faster.
+aws s3 is the webhosting service for static websites, meaning not requiring a server. 
+use aws amplify next time, a little more complex. didnt use ec2, which is a virtual machine.
+aws lightsail is lighter version of ec2.
+aws elastic beanstalk is an orchestration tool to create an ec2 instance.
 not the most organized css or html
 position: static is the default
 relative you need to change left right top bottom, changes relative to default
@@ -15,7 +19,7 @@ gradient
 :root is the parent of all parent elements
 transform: skews, rotates, 
 scales bigger or smaller in x or y direction
-translates changes moves in x and y direction etc
+translates moves in x and y direction etc
 transition: change property over time
 animation: change over time with points
 media query looks at display size
