@@ -185,13 +185,16 @@ let opponentsCards = {
 	13: 0,
 };
 
+// so cards will overlap
+let overLap = 0;
 //picks a random card and returns and shows
 function showCard(whosCard) {
 	let cardImg = document.createElement("img");
+	cardImg.setAttribute("id", "cardImageId");
 	cardImg.setAttribute("width", "90em;");
 	cardImg.setAttribute("height", "120em;");
-	cardImg.setAttribute("style", "background-color: white;");
-
+	cardImg.style.top = overLap.toString() + "px";
+	console.log("this is after style.top in showCard = " + overLap);
 	let randomCard = Math.floor(Math.random() * 13);
 	let randomCardOptions = [
 		"A",
@@ -210,6 +213,7 @@ function showCard(whosCard) {
 	];
 	cardImg.src = `./images/${randomCardOptions[randomCard]}.png`;
 	document.querySelector(whosCard).appendChild(cardImg);
+	overLap -= 50;
 	swish.play();
 	return randomCard;
 }
@@ -313,16 +317,20 @@ function deal() {
 	}
 
 	blackjackHit("dealerHit", "#opponentsCards");
+	overLap = 0;
+	console.log("this is after pressing deal " + overLap);
 }
 // initial deal
 deal();
+overLap = 0;
+console.log("this is after overlap=0 after initial deal" + overLap);
 
 function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 async function stand() {
 	disableHitStand();
-
+	overLap = -50;
 	while (
 		parseInt(document.getElementById("dealer-blackjack-result").innerHTML) < 17
 	) {
@@ -354,6 +362,7 @@ function win() {
 	cash.play();
 	document.getElementById("wins").innerHTML =
 		parseInt(document.getElementById("wins").innerHTML) + 1;
+	overLap = 0;
 	alert("You won!");
 }
 
@@ -361,6 +370,7 @@ function lose() {
 	aww.play();
 	document.getElementById("losses").innerHTML =
 		parseInt(document.getElementById("losses").innerHTML) + 1;
+	overLap = 0;
 	alert("You lost!");
 }
 
@@ -369,12 +379,15 @@ function busted() {
 	disableHitStand();
 	document.getElementById("losses").innerHTML =
 		parseInt(document.getElementById("losses").innerHTML) + 1;
+	overLap = 0;
+
 	alert("You busted!");
 }
 
 function draw() {
 	document.getElementById("draws").innerHTML =
 		parseInt(document.getElementById("draws").innerHTML) + 1;
+	overLap = 0;
 	alert("It's a draw");
 }
 

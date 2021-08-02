@@ -9,7 +9,7 @@ body {
 .container-5 {
 	border: 1px solid black;
 	text-align: center;
-	width: 75%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -63,8 +63,8 @@ body {
 	display: flex;
 	border: 3px solid hotpink;
 	padding: 10px;
-	flex-wrap: wrap;
-	flex-direction: row;
+	/* flex-wrap: wrap;
+	flex-direction: row;*/
 	justify-content: space-around;
 	background: url("https://media.istockphoto.com/vectors/poker-table-background-in-green-color-vector-id1206505233?k=6&m=1206505233&s=612x612&w=0&h=3yK8zXZmrh3-tRVtw0wY-AiTTwnqFf_mmNlIGAjlr4E=")
 		center;
@@ -73,20 +73,22 @@ body {
 
 .flex-blackjack-row-1 div {
 	border: 1px solid black;
-	flex: 1;
 	padding: 10px;
 	text-align: center;
 }
-#your-box {
-	height: 350px;
+#your-box,
+#dealer-box {
+	height: 60vh;
+	width: 50%;
 }
 #yourCards,
 #opponentsCards {
-	display: flex;
+	/* display: flex; */
 	height: 90%;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: space-around;
+	/* flex-wrap: wrap; */
+	/* flex-direction: column; */
+	justify-content: center;
+	position: relative;
 }
 table,
 th,
@@ -97,4 +99,19 @@ td {
 }
 .flex-blackjack-row-2 button {
 	margin: 5px;
+}
+
+#cardImageId {
+	position: relative;
+	background-color: white;
+}
+
+button {
+	z-index: 1;
+}
+
+@media screen and (min-width: 476px) {
+	#cardImageId {
+		position: static;
+	}
 }
