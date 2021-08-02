@@ -149,9 +149,9 @@ function changeColor(selector) {
 }
 
 // blackjackkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-let swish = new Audio("static/sounds/swish.m4a");
-let aww = new Audio("static/sounds/aww.mp3");
-let cash = new Audio("static/sounds/cash.mp3");
+let swish = new Audio("./sounds/swish.m4a");
+let aww = new Audio("./sounds/aww.mp3");
+let cash = new Audio("./sounds/cash.mp3");
 let yourCards = {
 	0: 0,
 	1: 0,
@@ -208,7 +208,7 @@ function showCard(whosCard) {
 		"Q",
 		"K",
 	];
-	cardImg.src = `static/images/${randomCardOptions[randomCard]}.png`;
+	cardImg.src = `./images/${randomCardOptions[randomCard]}.png`;
 	document.querySelector(whosCard).appendChild(cardImg);
 	swish.play();
 	return randomCard;
