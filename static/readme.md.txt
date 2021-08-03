@@ -1,4 +1,6 @@
-https://www.youtube.com/watch?v=mU6anWqZJcc&t=5963
+for for html and css tutorial, watch https://www.youtube.com/watch?v=mU6anWqZJcc&t=5963
+for route 53 domain name, (a bit tricky) setup https://www.youtube.com/watch?v=jS6rrOO04y8
+when searching for your new website, http, not https
 aws is hosting it. route 53 to register domain name. cloudfront, a cdn,  to make data transfer faster.
 aws s3 is the webhosting service for static websites, meaning not requiring a server. 
 use aws amplify next time, a little more complex. didnt use ec2, which is a virtual machine.
