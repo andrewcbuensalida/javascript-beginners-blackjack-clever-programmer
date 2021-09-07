@@ -1,5 +1,6 @@
 body {
 	background: black;
+	color: lightgrey;
 }
 
 .container-1,
@@ -7,7 +8,6 @@ body {
 .container-3,
 .container-4,
 .container-5 {
-	border: 1px solid black;
 	text-align: center;
 	width: 100%;
 	margin: 0 auto;
@@ -17,7 +17,6 @@ body {
 .flex-box-container-3,
 .flex-blackjack-row-3 {
 	display: flex;
-	border: 1px solid black;
 	padding: 10px;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -27,32 +26,29 @@ body {
 .flex-box-container-1 div {
 	display: flex;
 	padding: 10px;
-	border: 1px solid black;
 	align-items: center;
 }
 
 .flex-box-container-2 {
 	display: flex;
-	border: 1px solid green;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	padding: 10px;
 }
 
 .flex-box-container-2 img {
-	border: 2px solid green;
+	border: 2px solid black;
 	margin: 5px;
 	box-shadow: 5px 10px 10px rgb(0 0 0 / 0.6);
 }
 
 .flex-box-container-3 img:hover {
-	box-shadow: 5px 5px 5px greenyellow;
+	box-shadow: 5px 5px 5px lightgrey;
 }
 
 .flex-box-container-4 {
 	display: flex;
 	justify-content: space-around;
-	border: 2px solid orange;
 	padding: 10px;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -61,10 +57,7 @@ body {
 .flex-blackjack-row-1,
 .flex-blackjack-row-2 {
 	display: flex;
-	border: 3px solid hotpink;
 	padding: 10px;
-	/* flex-wrap: wrap;
-	flex-direction: row;*/
 	justify-content: space-around;
 	background: url("https://media.istockphoto.com/vectors/poker-table-background-in-green-color-vector-id1206505233?k=6&m=1206505233&s=612x612&w=0&h=3yK8zXZmrh3-tRVtw0wY-AiTTwnqFf_mmNlIGAjlr4E=")
 		center;
@@ -72,7 +65,6 @@ body {
 }
 
 .flex-blackjack-row-1 div {
-	border: 1px solid black;
 	padding: 10px;
 	text-align: center;
 }
@@ -83,18 +75,16 @@ body {
 }
 #yourCards,
 #opponentsCards {
-	/* display: flex; */
 	height: 90%;
-	/* flex-wrap: wrap; */
-	/* flex-direction: column; */
 	justify-content: center;
 	position: relative;
 }
 table,
 th,
 td {
+	color: lightgrey;
 	padding: 5px;
-	border: 1px solid black;
+	border: 1px solid lightgrey;
 	text-align: center;
 }
 .flex-blackjack-row-2 button {
