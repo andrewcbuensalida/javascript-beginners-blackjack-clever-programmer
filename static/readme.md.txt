@@ -1,11 +1,57 @@
 for for html and css tutorial, watch https://www.youtube.com/watch?v=mU6anWqZJcc&t=5963
+
 for route 53 domain name, (a bit tricky) setup https://www.youtube.com/watch?v=jS6rrOO04y8
 when searching for your new website, http, not https
 aws is hosting it. route 53 to register domain name. cloudfront, a cdn,  to make data transfer faster.
 aws s3 is the webhosting service for static websites, meaning not requiring a server. 
+in order to use naked domain andrewsblackjack.com, have to create a new bucket with that name. aws is soooo glitchy. first it woudnt connect if 
+i used naked domain, then i created a record to redirect to www.andrewsblackjack.com, still didnt work. then i created a bucket, then it worked. then i
+deleted the bucket and it still worked. then i deleted the record, and it still worked. there's definitely a delay, but i dont know which part. 
+aws sucks. hostgator could easily allow naked domains.
+now i repeated it and it doesnt work. i think it really needs a new bucket, then in route 53, alias to another record www.andrewsblackjack.com or to the bucket.
+pipeline there's a delay sometimes.
+
+can run react app marioplan lesson 30 on s3. watch this https://www.youtube.com/watch?v=BZcSUInHBfc or 
+https://www.youtube.com/watch?v=mls8tiiI3uc. had to cmd npm run build to make the buiild folder,
+then upload that folder to s3 bucket. although i dont think connecting to firebase is possible. index document still index.html
+cant run npm run build on musician app because it doesnt have script build in package.json.
+
 use aws amplify next time, a little more complex. didnt use ec2, which is a virtual machine.
+able to run marioplan lesson 3. after committing then pushing to github from vs code, it automatically updates amplify. no need to setup pipeline.
+watch this https://www.youtube.com/watch?v=uFHKSvBJOjk. this is the way to go, not elastic beanstalk.
+ 
+uploading react and manually creating ec2 instance is more involved. https://www.youtube.com/watch?v=FanoTGjkxhQ. clicking open after putty didnt work the first time, but second time 
+worked.in putty, in order to copy paste curl thing, shift + insert. managed to run his sample log in app because he had webpack.config.js. needed to copy paste public dns instead of 
+clicking open address button. couldnt run marioplan because instructions were too specific to his app. he uses nginx. 
+
+uploading react and manually creating ec2 instance, this video https://www.youtube.com/watch?v=OCau7X--EXU works, got help from 
+https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html on how to install node and npm on ubuntu ec2 instance. 
+got help from https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html?icmpid=docs_ec2_console on how to access the ec2 instance via putty, but can actually connect
+via ec2 with connect. has to be exactly http://ec2-54-254-233-150.ap-southeast-1.compute.amazonaws.com:8000/. simply clicking open wont work.
+key is to npm run build to create client folder which is the front end. then upload to github. not nginx server.
+
+another method to manually create ec2 and uploading react is with https://www.youtube.com/watch?v=ehITvx8VPFI. control + k is to delete line in ubuntu terminal. 
+this method works and involves nginx server.
+
 aws lightsail is lighter version of ec2.
-aws elastic beanstalk is an orchestration tool to create an ec2 instance.
+
+aws elastic beanstalk is an orchestration tool to create an ec2 instance. couldnt get marioplan react-scripts to run because beanstalk doesnt know npm start, maybe because
+i skipped the build step in the pipeline.no one on youtube uses elastic beanstalk to deploy react apps.
+but got musicianapp to run, change package.json script to "start": "node app.js", instead of nodemon app.js. i dont even know if musicianapp is react. probably not.
+
+have to install express. npm install --global express on local computer.
+
+
+flex box has an axis of direction. by default it's row, or x-axis direction.
+align-items is the alignment of the items crosswise of the axis of direction, left right or middle perpendicular to the axis of direction.
+align-items is default stretch.
+jusitfy-content is by default flex-start
+justify-content is the alignment of the items parallel to the axis of direction, start or end.
+flex-wrap default is nowrap meaning it fits in one line. wrap moves content to next line if doesnt fit.
+flex property is 3 properties in one, flex-grow, flex-shrink, flex-basis
+flex-basis is how many pixels default
+flex-grow 1 means it will stretch 1x fast if there's extra space. 0 is default value.
+flex-shrink 1 means it will shrink 1x fast if container too small. 1 is default.
 not the most organized css or html
 position: static is the default
 relative you need to change left right top bottom, changes relative to default

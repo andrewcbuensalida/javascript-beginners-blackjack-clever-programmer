@@ -1,152 +1,152 @@
-function ageInDays() {
-	let birthYear = prompt("Enter birth year");
-	let result = (new Date().getFullYear() - birthYear) * 365;
-	// could do this or appendchild
-	// document.getElementById("flex-box-result").innerHTML = result;
-	// appendchild method
-	let createdElem = document.createElement("div");
-	createdElem.setAttribute("id", "answer");
-	let createdTextNode = document.createTextNode(
-		"You are " + result + " days old."
-	);
-	createdElem.appendChild(createdTextNode);
-	document.getElementById("flex-box-result").appendChild(createdElem);
-	console.log(result);
-}
+// function ageInDays() {
+// 	let birthYear = prompt("Enter birth year");
+// 	let result = (new Date().getFullYear() - birthYear) * 365;
+// 	// could do this or appendchild
+// 	// document.getElementById("flex-box-result").innerHTML = result;
+// 	// appendchild method
+// 	let createdElem = document.createElement("div");
+// 	createdElem.setAttribute("id", "answer");
+// 	let createdTextNode = document.createTextNode(
+// 		"You are " + result + " days old."
+// 	);
+// 	createdElem.appendChild(createdTextNode);
+// 	document.getElementById("flex-box-result").appendChild(createdElem);
+// 	console.log(result);
+// }
 
-function reset() {
-	document.getElementById("answer").remove();
-}
+// function reset() {
+// 	document.getElementById("answer").remove();
+// }
 
-function generateCat() {
-	let cat = document.createElement("img");
-	// could do it this way or setAttribute
-	// cat.src =
-	// 	"https://thecatapi.com/api/images/get?format=src&type=gif&size=small";
-	// setAttribute method
-	cat.setAttribute(
-		"src",
-		"https://thecatapi.com/api/images/get?format=src&type=gif&size=small"
-	);
-	cat.setAttribute("width", "30%");
+// function generateCat() {
+// 	let cat = document.createElement("img");
+// 	// could do it this way or setAttribute
+// 	// cat.src =
+// 	// 	"https://thecatapi.com/api/images/get?format=src&type=gif&size=small";
+// 	// setAttribute method
+// 	cat.setAttribute(
+// 		"src",
+// 		"https://thecatapi.com/api/images/get?format=src&type=gif&size=small"
+// 	);
+// 	cat.setAttribute("width", "30%");
 
-	document.getElementById("catResult").appendChild(cat);
-}
+// 	document.getElementById("catResult").appendChild(cat);
+// }
 
-function rpsGame(gesture) {
-	let random = Math.floor(Math.random() * 3) + 1;
-	switch (random) {
-		case 1:
-			document.getElementById("rock").style = "box-shadow: -5px 5px 5px red;";
-			break;
-		case 2:
-			document.getElementById("paper").style = "box-shadow: -5px 5px 5px red;";
-			break;
-		case 3:
-			document.getElementById("scissors").style =
-				"box-shadow: -5px 5px 5px red;";
-			break;
-	}
-	let rpsDiv = document.createElement("div");
-	let flexbox3 = document.getElementById("flex-box-container-3");
-	flexbox3.insertBefore(rpsDiv, flexbox3.firstChild);
-	rpsDiv.style =
-		"border: 2px solid blue;  position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; width: 75%; background-color: coral;";
+// function rpsGame(gesture) {
+// 	let random = Math.floor(Math.random() * 3) + 1;
+// 	switch (random) {
+// 		case 1:
+// 			document.getElementById("rock").style = "box-shadow: -5px 5px 5px red;";
+// 			break;
+// 		case 2:
+// 			document.getElementById("paper").style = "box-shadow: -5px 5px 5px red;";
+// 			break;
+// 		case 3:
+// 			document.getElementById("scissors").style =
+// 				"box-shadow: -5px 5px 5px red;";
+// 			break;
+// 	}
+// 	let rpsDiv = document.createElement("div");
+// 	let flexbox3 = document.getElementById("flex-box-container-3");
+// 	flexbox3.insertBefore(rpsDiv, flexbox3.firstChild);
+// 	rpsDiv.style =
+// 		"border: 2px solid blue;  position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; width: 75%; background-color: coral;";
 
-	let rpsTie = document.createTextNode("It's a tie");
-	let rpsWin = document.createTextNode("You won");
-	let rpsLose = document.createTextNode("You lost");
+// 	let rpsTie = document.createTextNode("It's a tie");
+// 	let rpsWin = document.createTextNode("You won");
+// 	let rpsLose = document.createTextNode("You lost");
 
-	switch (gesture.id) {
-		case "rock":
-			if (random == 1) {
-				rpsDiv.appendChild(rpsTie);
-			} else if (random == 2) {
-				rpsDiv.appendChild(rpsLose);
-			} else if (random == 3) {
-				rpsDiv.appendChild(rpsWin);
-			}
-			gesture.style = "box-shadow: 5px 5px 5px greenyellow;";
-			break;
-		case "paper":
-			if (random == 1) {
-				rpsDiv.appendChild(rpsWin);
-			} else if (random == 2) {
-				rpsDiv.appendChild(rpsTie);
-			} else if (random == 3) {
-				rpsDiv.appendChild(rpsLose);
-			}
-			gesture.style = "box-shadow: 5px 5px 5px greenyellow;";
+// 	switch (gesture.id) {
+// 		case "rock":
+// 			if (random == 1) {
+// 				rpsDiv.appendChild(rpsTie);
+// 			} else if (random == 2) {
+// 				rpsDiv.appendChild(rpsLose);
+// 			} else if (random == 3) {
+// 				rpsDiv.appendChild(rpsWin);
+// 			}
+// 			gesture.style = "box-shadow: 5px 5px 5px greenyellow;";
+// 			break;
+// 		case "paper":
+// 			if (random == 1) {
+// 				rpsDiv.appendChild(rpsWin);
+// 			} else if (random == 2) {
+// 				rpsDiv.appendChild(rpsTie);
+// 			} else if (random == 3) {
+// 				rpsDiv.appendChild(rpsLose);
+// 			}
+// 			gesture.style = "box-shadow: 5px 5px 5px greenyellow;";
 
-			break;
-		case "scissors":
-			if (random == 1) {
-				rpsDiv.appendChild(rpsLose);
-			} else if (random == 2) {
-				rpsDiv.appendChild(rpsWin);
-			} else if (random == 3) {
-				rpsDiv.appendChild(rpsTie);
-			}
-			gesture.style = "box-shadow: 5px 5px 5px greenyellow;";
+// 			break;
+// 		case "scissors":
+// 			if (random == 1) {
+// 				rpsDiv.appendChild(rpsLose);
+// 			} else if (random == 2) {
+// 				rpsDiv.appendChild(rpsWin);
+// 			} else if (random == 3) {
+// 				rpsDiv.appendChild(rpsTie);
+// 			}
+// 			gesture.style = "box-shadow: 5px 5px 5px greenyellow;";
 
-			break;
-	}
-}
+// 			break;
+// 	}
+// }
 
-function rpsReset() {
-	document.getElementById("rock").style = "";
-	document.getElementById("paper").style = "";
-	document.getElementById("scissors").style = "";
-	let flexbox3 = document.getElementById("flex-box-container-3");
+// function rpsReset() {
+// 	document.getElementById("rock").style = "";
+// 	document.getElementById("paper").style = "";
+// 	document.getElementById("scissors").style = "";
+// 	let flexbox3 = document.getElementById("flex-box-container-3");
 
-	while (flexbox3.getElementsByTagName("div")[0]) {
-		flexbox3.removeChild(flexbox3.getElementsByTagName("div")[0]);
-	}
-}
+// 	while (flexbox3.getElementsByTagName("div")[0]) {
+// 		flexbox3.removeChild(flexbox3.getElementsByTagName("div")[0]);
+// 	}
+// }
 
-let allButtons = document.getElementsByTagName("button");
-let copyAllButtons = [];
-for (let i = 0; i < allButtons.length; i++) {
-	copyAllButtons[i] = allButtons[i].className;
-}
+// let allButtons = document.getElementsByTagName("button");
+// let copyAllButtons = [];
+// for (let i = 0; i < allButtons.length; i++) {
+// 	copyAllButtons[i] = allButtons[i].className;
+// }
 
-function changeColor(selector) {
-	console.log(allButtons);
-	console.log(copyAllButtons);
-	console.log(selector.value);
-	switch (selector.value) {
-		case "random":
-			for (let i of allButtons) {
-				let random = Math.floor(Math.random() * 2);
-				if (random == 0) {
-					i.className = "btn btn-danger";
-				} else {
-					i.className = "btn btn-success";
-				}
-			}
-			break;
-		case "red":
-			// could use this for, or for of below
-			for (let i = 0; i < allButtons.length; i++) {
-				allButtons[i].className = "btn btn-danger";
-			}
-			console.log(allButtons);
-			break;
-		case "green":
-			// could use this for of, or for above
-			for (let i of allButtons) {
-				i.className = "btn btn-success";
-			}
-			console.log(allButtons);
+// function changeColor(selector) {
+// 	console.log(allButtons);
+// 	console.log(copyAllButtons);
+// 	console.log(selector.value);
+// 	switch (selector.value) {
+// 		case "random":
+// 			for (let i of allButtons) {
+// 				let random = Math.floor(Math.random() * 2);
+// 				if (random == 0) {
+// 					i.className = "btn btn-danger";
+// 				} else {
+// 					i.className = "btn btn-success";
+// 				}
+// 			}
+// 			break;
+// 		case "red":
+// 			// could use this for, or for of below
+// 			for (let i = 0; i < allButtons.length; i++) {
+// 				allButtons[i].className = "btn btn-danger";
+// 			}
+// 			console.log(allButtons);
+// 			break;
+// 		case "green":
+// 			// could use this for of, or for above
+// 			for (let i of allButtons) {
+// 				i.className = "btn btn-success";
+// 			}
+// 			console.log(allButtons);
 
-			break;
-		case "reset":
-			for (let i = 0; i < allButtons.length; i++) {
-				allButtons[i].className = copyAllButtons[i];
-			}
-			break;
-	}
-}
+// 			break;
+// 		case "reset":
+// 			for (let i = 0; i < allButtons.length; i++) {
+// 				allButtons[i].className = copyAllButtons[i];
+// 			}
+// 			break;
+// 	}
+// }
 
 // blackjackkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 let swish = new Audio("./sounds/swish.m4a");
