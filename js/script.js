@@ -248,9 +248,12 @@ function blackjackHit(whosHit, whosCardsContainer) {
 
 	document.getElementById(idOfResult).innerHTML = blackjackResult;
 	if (
-		parseInt(document.getElementById("your-blackjack-result").innerHTML) > 21
+		parseInt(document.getElementById("your-blackjack-result").innerHTML) >
+		21
 	) {
-		busted();
+		setTimeout(() => {
+			busted();
+		});
 	}
 }
 
@@ -313,7 +316,9 @@ function deal() {
 	while (document.querySelector("#opponentsCards").hasChildNodes()) {
 		document
 			.querySelector("#opponentsCards")
-			.removeChild(document.querySelector("#opponentsCards").childNodes[0]);
+			.removeChild(
+				document.querySelector("#opponentsCards").childNodes[0]
+			);
 	}
 
 	blackjackHit("dealerHit", "#opponentsCards");
@@ -332,7 +337,8 @@ async function stand() {
 	disableHitStand();
 	overLap = -50;
 	while (
-		parseInt(document.getElementById("dealer-blackjack-result").innerHTML) < 17
+		parseInt(document.getElementById("dealer-blackjack-result").innerHTML) <
+		17
 	) {
 		blackjackHit("dealerHit", "#opponentsCards");
 		await sleep(800);
@@ -363,7 +369,9 @@ function win() {
 	document.getElementById("wins").innerHTML =
 		parseInt(document.getElementById("wins").innerHTML) + 1;
 	overLap = 0;
-	alert("You won!");
+	setTimeout(() => {
+		alert("You won!");
+	});
 }
 
 function lose() {
@@ -380,8 +388,9 @@ function busted() {
 	document.getElementById("losses").innerHTML =
 		parseInt(document.getElementById("losses").innerHTML) + 1;
 	overLap = 0;
-
-	alert("You busted!");
+	setTimeout(() => {
+		alert("You busted!");
+	});
 }
 
 function draw() {
