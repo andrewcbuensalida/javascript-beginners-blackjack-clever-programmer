@@ -245,15 +245,13 @@ function blackjackHit(whosHit, whosCardsContainer) {
 			blackjackResult += 10;
 		}
 	}
-
+	//current count
 	document.getElementById(idOfResult).innerHTML = blackjackResult;
 	if (
 		parseInt(document.getElementById("your-blackjack-result").innerHTML) >
 		21
 	) {
-		setTimeout(() => {
-			busted();
-		});
+		busted();
 	}
 }
 
@@ -390,7 +388,7 @@ function busted() {
 	overLap = 0;
 	setTimeout(() => {
 		alert("You busted!");
-	});
+	}, 100);
 }
 
 function draw() {
