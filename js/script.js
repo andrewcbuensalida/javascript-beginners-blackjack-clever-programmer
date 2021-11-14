@@ -1,153 +1,3 @@
-// function ageInDays() {
-// 	let birthYear = prompt("Enter birth year");
-// 	let result = (new Date().getFullYear() - birthYear) * 365;
-// 	// could do this or appendchild
-// 	// document.getElementById("flex-box-result").innerHTML = result;
-// 	// appendchild method
-// 	let createdElem = document.createElement("div");
-// 	createdElem.setAttribute("id", "answer");
-// 	let createdTextNode = document.createTextNode(
-// 		"You are " + result + " days old."
-// 	);
-// 	createdElem.appendChild(createdTextNode);
-// 	document.getElementById("flex-box-result").appendChild(createdElem);
-// 	console.log(result);
-// }
-
-// function reset() {
-// 	document.getElementById("answer").remove();
-// }
-
-// function generateCat() {
-// 	let cat = document.createElement("img");
-// 	// could do it this way or setAttribute
-// 	// cat.src =
-// 	// 	"https://thecatapi.com/api/images/get?format=src&type=gif&size=small";
-// 	// setAttribute method
-// 	cat.setAttribute(
-// 		"src",
-// 		"https://thecatapi.com/api/images/get?format=src&type=gif&size=small"
-// 	);
-// 	cat.setAttribute("width", "30%");
-
-// 	document.getElementById("catResult").appendChild(cat);
-// }
-
-// function rpsGame(gesture) {
-// 	let random = Math.floor(Math.random() * 3) + 1;
-// 	switch (random) {
-// 		case 1:
-// 			document.getElementById("rock").style = "box-shadow: -5px 5px 5px red;";
-// 			break;
-// 		case 2:
-// 			document.getElementById("paper").style = "box-shadow: -5px 5px 5px red;";
-// 			break;
-// 		case 3:
-// 			document.getElementById("scissors").style =
-// 				"box-shadow: -5px 5px 5px red;";
-// 			break;
-// 	}
-// 	let rpsDiv = document.createElement("div");
-// 	let flexbox3 = document.getElementById("flex-box-container-3");
-// 	flexbox3.insertBefore(rpsDiv, flexbox3.firstChild);
-// 	rpsDiv.style =
-// 		"border: 2px solid blue;  position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; width: 75%; background-color: coral;";
-
-// 	let rpsTie = document.createTextNode("It's a tie");
-// 	let rpsWin = document.createTextNode("You won");
-// 	let rpsLose = document.createTextNode("You lost");
-
-// 	switch (gesture.id) {
-// 		case "rock":
-// 			if (random == 1) {
-// 				rpsDiv.appendChild(rpsTie);
-// 			} else if (random == 2) {
-// 				rpsDiv.appendChild(rpsLose);
-// 			} else if (random == 3) {
-// 				rpsDiv.appendChild(rpsWin);
-// 			}
-// 			gesture.style = "box-shadow: 5px 5px 5px greenyellow;";
-// 			break;
-// 		case "paper":
-// 			if (random == 1) {
-// 				rpsDiv.appendChild(rpsWin);
-// 			} else if (random == 2) {
-// 				rpsDiv.appendChild(rpsTie);
-// 			} else if (random == 3) {
-// 				rpsDiv.appendChild(rpsLose);
-// 			}
-// 			gesture.style = "box-shadow: 5px 5px 5px greenyellow;";
-
-// 			break;
-// 		case "scissors":
-// 			if (random == 1) {
-// 				rpsDiv.appendChild(rpsLose);
-// 			} else if (random == 2) {
-// 				rpsDiv.appendChild(rpsWin);
-// 			} else if (random == 3) {
-// 				rpsDiv.appendChild(rpsTie);
-// 			}
-// 			gesture.style = "box-shadow: 5px 5px 5px greenyellow;";
-
-// 			break;
-// 	}
-// }
-
-// function rpsReset() {
-// 	document.getElementById("rock").style = "";
-// 	document.getElementById("paper").style = "";
-// 	document.getElementById("scissors").style = "";
-// 	let flexbox3 = document.getElementById("flex-box-container-3");
-
-// 	while (flexbox3.getElementsByTagName("div")[0]) {
-// 		flexbox3.removeChild(flexbox3.getElementsByTagName("div")[0]);
-// 	}
-// }
-
-// let allButtons = document.getElementsByTagName("button");
-// let copyAllButtons = [];
-// for (let i = 0; i < allButtons.length; i++) {
-// 	copyAllButtons[i] = allButtons[i].className;
-// }
-
-// function changeColor(selector) {
-// 	console.log(allButtons);
-// 	console.log(copyAllButtons);
-// 	console.log(selector.value);
-// 	switch (selector.value) {
-// 		case "random":
-// 			for (let i of allButtons) {
-// 				let random = Math.floor(Math.random() * 2);
-// 				if (random == 0) {
-// 					i.className = "btn btn-danger";
-// 				} else {
-// 					i.className = "btn btn-success";
-// 				}
-// 			}
-// 			break;
-// 		case "red":
-// 			// could use this for, or for of below
-// 			for (let i = 0; i < allButtons.length; i++) {
-// 				allButtons[i].className = "btn btn-danger";
-// 			}
-// 			console.log(allButtons);
-// 			break;
-// 		case "green":
-// 			// could use this for of, or for above
-// 			for (let i of allButtons) {
-// 				i.className = "btn btn-success";
-// 			}
-// 			console.log(allButtons);
-
-// 			break;
-// 		case "reset":
-// 			for (let i = 0; i < allButtons.length; i++) {
-// 				allButtons[i].className = copyAllButtons[i];
-// 			}
-// 			break;
-// 	}
-// }
-
 // blackjackkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 let swish = new Audio("./sounds/swish.m4a");
 let aww = new Audio("./sounds/aww.mp3");
@@ -189,12 +39,11 @@ let opponentsCards = {
 let overLap = 0;
 //picks a random card and returns and shows
 function showCard(whosCard) {
-	let cardImg = document.createElement("img");
-	cardImg.setAttribute("id", "cardImageId");
-	cardImg.setAttribute("width", "90em;");
-	cardImg.setAttribute("height", "120em;");
-	cardImg.style.top = overLap.toString() + "px";
-	console.log("this is after style.top in showCard = " + overLap);
+	let cardImg = $("<img>");
+	cardImg.attr("id", "cardImageId");
+	cardImg.attr("width", "90em;");
+	cardImg.attr("height", "120em;");
+	cardImg.css("top", overLap.toString() + "px");
 	let randomCard = Math.floor(Math.random() * 13);
 	let randomCardOptions = [
 		"A",
@@ -211,8 +60,8 @@ function showCard(whosCard) {
 		"Q",
 		"K",
 	];
-	cardImg.src = `./images/${randomCardOptions[randomCard]}.png`;
-	document.querySelector(whosCard).appendChild(cardImg);
+	cardImg.attr("src", `./images/${randomCardOptions[randomCard]}.png`);
+	$(whosCard).append(cardImg);
 	overLap -= 50;
 	swish.play();
 	return randomCard;
@@ -246,28 +95,25 @@ function blackjackHit(whosHit, whosCardsContainer) {
 		}
 	}
 	//current count
-	document.getElementById(idOfResult).innerHTML = blackjackResult;
-	if (
-		parseInt(document.getElementById("your-blackjack-result").innerHTML) >
-		21
-	) {
+	console.log(`This is blackjackResult`);
+	console.log(blackjackResult);
+
+	$(`#${idOfResult}`).text(blackjackResult);
+	if (parseInt($("#" + "your-blackjack-result").text()) > 21) {
 		busted();
 	}
 }
 
 function deal() {
 	//disable deal button
-	document
-		.getElementById("blackjack-deal-button")
-		.setAttribute("onclick", "messageToHitStand()");
+	$("#" + "blackjack-deal-button").attr("onclick", "messageToHitStand()");
 
 	// enabling hit and stand buttons
-	document
-		.getElementById("blackjack-hit-button")
-		.setAttribute("onclick", "blackjackHit('yourHit', '#yourCards')");
-	document
-		.getElementById("blackjack-stand-button")
-		.setAttribute("onclick", "stand()");
+	$("#" + "blackjack-hit-button").attr(
+		"onclick",
+		"blackjackHit('yourHit', '#yourCards')"
+	);
+	$("#" + "blackjack-stand-button").attr("onclick", "stand()");
 
 	// resetting card count result
 	yourCards = {
@@ -302,31 +148,23 @@ function deal() {
 		12: 0,
 		13: 0,
 	};
-	document.getElementById("your-blackjack-result").innerHTML = 0;
-	document.getElementById("dealer-blackjack-result").innerHTML = 0;
+	$("#" + "your-blackjack-result").text("0");
+	$("#" + "dealer-blackjack-result").text("0");
 	// removing cards
-	while (document.querySelector("#yourCards").hasChildNodes()) {
-		document
-			.querySelector("#yourCards")
-			.removeChild(document.querySelector("#yourCards").childNodes[0]);
+	while ($("#yourCards").children().length > 0) {
+		$("#yourCards").children()[0].remove();
 	}
 	// removing cards
-	while (document.querySelector("#opponentsCards").hasChildNodes()) {
-		document
-			.querySelector("#opponentsCards")
-			.removeChild(
-				document.querySelector("#opponentsCards").childNodes[0]
-			);
+	while ($("#opponentsCards").children().length > 0) {
+		$("#opponentsCards").children()[0].remove();
 	}
 
 	blackjackHit("dealerHit", "#opponentsCards");
 	overLap = 0;
-	console.log("this is after pressing deal " + overLap);
 }
 // initial deal
 deal();
 overLap = 0;
-console.log("this is after overlap=0 after initial deal" + overLap);
 
 function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
@@ -334,26 +172,22 @@ function sleep(ms) {
 async function stand() {
 	disableHitStand();
 	overLap = -50;
-	while (
-		parseInt(document.getElementById("dealer-blackjack-result").innerHTML) <
-		17
-	) {
+	while (parseInt($("#" + "dealer-blackjack-result").text()) < 17) {
 		blackjackHit("dealerHit", "#opponentsCards");
 		await sleep(800);
 	}
 
 	// if dealer busts or your greater
 	if (
-		parseInt(document.getElementById("dealer-blackjack-result").innerHTML) >
-			21 ||
-		parseInt(document.getElementById("dealer-blackjack-result").innerHTML) <
-			parseInt(document.getElementById("your-blackjack-result").innerHTML)
+		parseInt($("#" + "dealer-blackjack-result").text()) > 21 ||
+		parseInt($("#" + "dealer-blackjack-result").text()) <
+			parseInt($("#" + "your-blackjack-result").text())
 	) {
 		win();
 		// if dealer is greater
 	} else if (
-		parseInt(document.getElementById("dealer-blackjack-result").innerHTML) >
-		parseInt(document.getElementById("your-blackjack-result").innerHTML)
+		parseInt($("#" + "dealer-blackjack-result").text()) >
+		parseInt($("#" + "your-blackjack-result").text())
 	) {
 		lose();
 		// if equal
@@ -364,8 +198,7 @@ async function stand() {
 
 function win() {
 	cash.play();
-	document.getElementById("wins").innerHTML =
-		parseInt(document.getElementById("wins").innerHTML) + 1;
+	$("#" + "wins").text(parseInt($("#" + "wins").text()) + 1);
 	overLap = 0;
 	setTimeout(() => {
 		alert("You won!");
@@ -374,8 +207,7 @@ function win() {
 
 function lose() {
 	aww.play();
-	document.getElementById("losses").innerHTML =
-		parseInt(document.getElementById("losses").innerHTML) + 1;
+	$("#" + "losses").text(parseInt($("#" + "losses").text()) + 1);
 	overLap = 0;
 	alert("You lost!");
 }
@@ -383,8 +215,7 @@ function lose() {
 function busted() {
 	aww.play();
 	disableHitStand();
-	document.getElementById("losses").innerHTML =
-		parseInt(document.getElementById("losses").innerHTML) + 1;
+	$("#" + "losses").text(parseInt($("#" + "losses").text()) + 1);
 	overLap = 0;
 	setTimeout(() => {
 		alert("You busted!");
@@ -392,25 +223,18 @@ function busted() {
 }
 
 function draw() {
-	document.getElementById("draws").innerHTML =
-		parseInt(document.getElementById("draws").innerHTML) + 1;
+	$("#" + "draws").text(parseInt($("#" + "draws").text()) + 1);
 	overLap = 0;
 	alert("It's a draw");
 }
 
 function disableHitStand() {
 	//enable deal button
-	document
-		.getElementById("blackjack-deal-button")
-		.setAttribute("onclick", "deal()");
+	$("#" + "blackjack-deal-button").attr("onclick", "deal()");
 	//disable hit
-	document
-		.getElementById("blackjack-hit-button")
-		.setAttribute("onclick", "messageForNewGame()");
+	$("#" + "blackjack-hit-button").attr("onclick", "messageForNewGame()");
 	//disable stand
-	document
-		.getElementById("blackjack-stand-button")
-		.setAttribute("onclick", "messageForNewGame()");
+	$("#" + "blackjack-stand-button").attr("onclick", "messageForNewGame()");
 }
 
 function messageForNewGame() {
